@@ -1,0 +1,16 @@
+sens_file = 'words.txt'
+with open(sens_file,encoding='UTF-8') as file_object:
+    contents = file_object.read()
+    words = contents.split()
+    pass
+
+while True:
+    input_word = input('Please input your message:')
+    if input_word == 'q':
+        break
+
+    for sens_word in words:
+        if sens_word in input_word:
+            input_word = input_word.replace(sens_word,'**')
+
+    print(input_word)
